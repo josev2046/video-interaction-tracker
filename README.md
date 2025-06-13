@@ -1,5 +1,8 @@
 # video-interaction-tracker
 
+[![DOI](https://zenodo.org/badge/1001469658.svg)](https://doi.org/10.5281/zenodo.15657198)
+
+
 ![image](https://github.com/user-attachments/assets/281f1b56-8694-4480-a881-c87deb7cf8e4)
 
 A **User** accesses a video resource on the **WebApp**. If they aren't logged in, they'll be prompted to submit a **login form**. Once successfully logged in, the **WebApp** starts a **session** and stores related data, like a session ID.
