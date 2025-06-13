@@ -1,0 +1,26 @@
+@startuml
+
+actor User as U
+
+participant "Website (WebApp)" as WA
+participant "Vimeo Player/SDK" as VP
+database "Database" as DB
+
+U -> WA : Accesses video resource
+alt Not Logged In
+    WA --> U : Prompt for login form
+    U -> WA : Submits login form
+    WA -> WA : Initiates session & stores session ID
+end
+WA --> U : Displays Video Page
+WA -> U : Displays user-specific data (User ID, Username)
+WA -> VP : Initialise Player with video content
+U -> VP : User interactions (Play, Pause, Complete)
+VP -> DB : Log interaction data
+alt User Logs Out
+    U -> WA : Log Out
+    WA -> WA : Destroys session & clears user data
+    WA --> U : Redirects to Login Page
+end
+
+@enduml
